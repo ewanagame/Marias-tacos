@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Lato, Playfair_Display } from "next/font/google";
+import ChatBot from "@/components/ChatBot";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import "./globals.css";
@@ -33,6 +34,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <ChatBot />
       </body>
     </html>
   );
