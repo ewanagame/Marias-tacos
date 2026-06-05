@@ -32,9 +32,9 @@ export default function RootLayout({
         className={`${playfairDisplay.variable} ${lato.variable} flex min-h-screen flex-col`}
       >
         <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <main className="relative z-0 flex-1">{children}</main>
         <ChatBot />
+        <Footer />
       </body>
     </html>
   );
