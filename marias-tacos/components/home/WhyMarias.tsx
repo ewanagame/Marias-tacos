@@ -68,13 +68,13 @@ const reasons = [
 
 export default function WhyMarias() {
   return (
-    <section className="bg-background px-6 py-20">
+    <section className="bg-background px-4 py-14 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-6xl">
         <div className="text-center">
           <p className="font-sans text-sm font-semibold uppercase tracking-[0.15em] text-secondary">
             Our Story
           </p>
-          <h2 className="mt-3 font-serif text-4xl font-bold text-primary">
+          <h2 className="mt-3 font-serif text-3xl font-bold text-primary sm:text-4xl">
             Why Maria&apos;s?
           </h2>
           <p className="mx-auto mt-4 max-w-2xl font-sans text-accent">
@@ -87,7 +87,7 @@ export default function WhyMarias() {
           {reasons.map(({ title, description, icon }) => (
             <article
               key={title}
-              className="rounded-2xl border border-accent/10 bg-[#FFFAF0] p-8 shadow-[0_4px_20px_rgba(74,55,40,0.08)] transition-transform hover:-translate-y-1"
+              className="rounded-2xl border border-accent/10 bg-[#FFFAF0] p-6 shadow-[0_4px_20px_rgba(74,55,40,0.08)] transition-transform hover:-translate-y-1 sm:p-8"
             >
               <div className="mb-5 inline-flex rounded-xl border border-primary/10 bg-primary/5 p-3 text-primary">
                 {icon}

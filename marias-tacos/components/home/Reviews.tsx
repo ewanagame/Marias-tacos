@@ -37,22 +37,22 @@ function StarRating() {
 
 export default function Reviews() {
   return (
-    <section className="bg-[#F5EBD8] px-6 py-20">
+    <section className="bg-[#F5EBD8] px-4 py-14 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-6xl">
         <div className="text-center">
           <p className="font-sans text-sm font-semibold uppercase tracking-[0.15em] text-secondary">
             What People Say
           </p>
-          <h2 className="mt-3 font-serif text-4xl font-bold text-primary">
+          <h2 className="mt-3 font-serif text-3xl font-bold text-primary sm:text-4xl">
             Customer Reviews
           </h2>
         </div>
 
-        <div className="mt-14 grid gap-8 md:grid-cols-3">
+        <div className="mt-10 grid gap-6 sm:mt-14 sm:gap-8 md:grid-cols-3">
           {reviews.map(({ quote, author }) => (
             <blockquote
               key={author}
-              className="flex h-full flex-col rounded-2xl border border-accent/10 bg-background p-8 shadow-[0_4px_20px_rgba(74,55,40,0.08)]"
+              className="flex h-full flex-col rounded-2xl border border-accent/10 bg-background p-6 shadow-[0_4px_20px_rgba(74,55,40,0.08)] sm:p-8"
             >
               <StarRating />
               <p className="mt-5 flex-1 font-sans text-sm leading-relaxed text-accent">

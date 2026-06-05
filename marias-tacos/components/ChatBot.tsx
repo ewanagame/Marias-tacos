@@ -45,6 +45,32 @@ function TypingIndicator() {
   );
 }
 
+function SendSpinner() {
+  return (
+    <svg
+      className="h-4 w-4 animate-spin"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <circle
+        className="opacity-25"
+        cx="12"
+        cy="12"
+        r="10"
+        stroke="currentColor"
+        strokeWidth="4"
+      />
+      <path
+        className="opacity-75"
+        fill="currentColor"
+        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+      />
+    </svg>
+  );
+}
+
 export default function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -120,12 +146,13 @@ export default function ChatBot() {
   }
 
   return (
-    <div className="fixed bottom-4 right-4 z-30 flex flex-col items-end gap-3 sm:bottom-6 sm:right-6">
+    <div className="fixed bottom-3 right-3 z-30 flex flex-col items-end gap-3 sm:bottom-6 sm:right-6">
       {isOpen && (
         <div
           role="dialog"
           aria-label="Maria's Tacos chat assistant"
-          className="flex h-[min(500px,calc(100vh-7rem))] w-[min(350px,calc(100vw-2rem))] flex-col overflow-hidden rounded-2xl border border-accent/15 bg-background shadow-[0_8px_40px_rgba(74,55,40,0.2)]"
+          aria-busy={isTyping}
+          className="flex h-[min(500px,calc(100dvh-8rem))] w-[min(350px,calc(100vw-1.5rem))] flex-col overflow-hidden rounded-2xl border border-accent/15 bg-background shadow-[0_8px_40px_rgba(74,55,40,0.2)]"
         >
           <div className="flex items-center justify-between border-b border-accent/10 bg-primary px-4 py-3">
             <div>
@@ -209,10 +236,17 @@ export default function ChatBot() {
             <button
               type="submit"
               disabled={isTyping || !input.trim()}
-              className="shrink-0 rounded-full bg-secondary px-4 py-2 font-sans text-sm font-semibold text-white transition-colors hover:bg-secondary/90 disabled:cursor-not-allowed disabled:opacity-50"
-              aria-label="Send message"
+              className="inline-flex min-w-[4.5rem] shrink-0 items-center justify-center rounded-full bg-secondary px-4 py-2 font-sans text-sm font-semibold text-white transition-colors hover:bg-secondary/90 disabled:cursor-not-allowed disabled:opacity-50"
+              aria-label={isTyping ? "Sending message" : "Send message"}
             >
-              Send
+              {isTyping ? (
+                <>
+                  <SendSpinner />
+                  <span className="sr-only">Sending</span>
+                </>
+              ) : (
+                "Send"
+              )}
             </button>
           </form>
         </div>
@@ -221,7 +255,7 @@ export default function ChatBot() {
       <button
         type="button"
         onClick={() => setIsOpen((open) => !open)}
-        className="flex items-center gap-2 rounded-full bg-primary px-4 py-3 font-sans text-sm font-semibold text-background shadow-[0_4px_20px_rgba(139,37,0,0.35)] transition-transform hover:scale-105 hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:ring-offset-2 focus:ring-offset-background"
+        className="flex items-center gap-2 rounded-full bg-primary px-3 py-2.5 font-sans text-xs font-semibold text-background shadow-[0_4px_20px_rgba(139,37,0,0.35)] transition-transform hover:scale-105 hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:ring-offset-2 focus:ring-offset-background sm:px-4 sm:py-3 sm:text-sm"
         aria-expanded={isOpen}
         aria-label={isOpen ? "Close chat assistant" : "Open chat assistant"}
       >

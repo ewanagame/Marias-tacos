@@ -10,11 +10,13 @@ function MenuItemCard({
   description: string;
 }) {
   return (
-    <article className="rounded-2xl border border-accent/10 bg-[#FFFAF0] p-6 shadow-[0_4px_20px_rgba(74,55,40,0.08)]">
-      <div className="flex items-start justify-between gap-4">
-        <h3 className="font-serif text-lg font-bold text-primary">{name}</h3>
+    <article className="rounded-2xl border border-accent/10 bg-[#FFFAF0] p-5 shadow-[0_4px_20px_rgba(74,55,40,0.08)] sm:p-6">
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+        <h3 className="font-serif text-base font-bold text-primary sm:text-lg">
+          {name}
+        </h3>
         {price && (
-          <span className="shrink-0 rounded-full bg-accent px-3 py-1 font-sans text-sm font-semibold text-background">
+          <span className="w-fit shrink-0 rounded-full bg-accent px-3 py-1 font-sans text-sm font-semibold text-background">
             {price}
           </span>
         )}
@@ -28,8 +30,10 @@ function MenuItemCard({
 
 export default function MenuSection({ id, title, items }: MenuCategory) {
   return (
-    <section id={id} className="scroll-mt-20">
-      <h2 className="font-serif text-3xl font-bold text-primary">{title}</h2>
+    <section id={id} className="scroll-mt-36 sm:scroll-mt-32">
+      <h2 className="font-serif text-2xl font-bold text-primary sm:text-3xl">
+        {title}
+      </h2>
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
         {items.map((item) => (
           <MenuItemCard key={item.name} {...item} />

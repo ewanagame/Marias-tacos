@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact & Location",
+  description:
+    "Visit Maria's Tacos at 110 W State St, Marshalltown, IA. Hours, directions, parking, accessibility, and payment info.",
+};
+
 function InfoCard({
   title,
   children,
@@ -6,8 +14,10 @@ function InfoCard({
   children: React.ReactNode;
 }) {
   return (
-    <article className="rounded-2xl border border-accent/10 bg-[#FFFAF0] p-8 shadow-[0_4px_20px_rgba(74,55,40,0.08)]">
-      <h2 className="font-serif text-2xl font-bold text-primary">{title}</h2>
+    <article className="rounded-2xl border border-accent/10 bg-[#FFFAF0] p-5 shadow-[0_4px_20px_rgba(74,55,40,0.08)] sm:p-8">
+      <h2 className="font-serif text-xl font-bold text-primary sm:text-2xl">
+        {title}
+      </h2>
       <div className="mt-5 font-sans text-sm leading-relaxed text-accent">
         {children}
       </div>
@@ -50,23 +60,23 @@ const parking = ["Free parking lot", "Free street parking"];
 export default function Contact() {
   return (
     <>
-      <div className="border-b border-accent/10 bg-[#F5EBD8] px-6 py-14">
+      <div className="border-b border-accent/10 bg-[#F5EBD8] px-4 py-10 sm:px-6 sm:py-14">
         <div className="mx-auto max-w-6xl text-center">
           <p className="font-sans text-sm font-semibold uppercase tracking-[0.15em] text-secondary">
             Visit Us
           </p>
-          <h1 className="mt-3 font-serif text-4xl font-bold text-primary sm:text-5xl">
+          <h1 className="mt-3 font-serif text-3xl font-bold text-primary sm:text-4xl md:text-5xl">
             Contact &amp; Location
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl font-sans text-accent">
+          <p className="mx-auto mt-4 max-w-2xl font-sans text-sm text-accent sm:text-base">
             Stop by downtown Marshalltown for authentic tacos, warm hospitality,
             and a welcoming atmosphere for the whole family.
           </p>
         </div>
       </div>
 
-      <div className="mx-auto max-w-6xl px-6 py-16">
-        <div className="grid gap-8 lg:grid-cols-2">
+      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+        <div className="grid gap-6 sm:gap-8 lg:grid-cols-2">
           <InfoCard title="Hours &amp; Location">
             <div className="space-y-6">
               <div>
@@ -102,7 +112,7 @@ export default function Contact() {
                 href="https://www.google.com/maps/dir/?api=1&destination=110+W+State+St,+Marshalltown,+IA+50158"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full border-2 border-primary bg-primary px-6 py-2.5 font-sans text-sm font-semibold text-background transition-colors hover:bg-primary/90"
+                className="inline-flex w-full items-center justify-center rounded-full border-2 border-primary bg-primary px-6 py-2.5 font-sans text-sm font-semibold text-background transition-colors hover:bg-primary/90 sm:w-auto"
               >
                 Get Directions
               </a>
@@ -113,7 +123,7 @@ export default function Contact() {
             <iframe
               title="Maria's Tacos location on Google Maps"
               src="https://maps.google.com/maps?q=110+W+State+St,+Marshalltown,+IA+50158&hl=en&z=15&output=embed"
-              className="h-full min-h-[320px] w-full lg:min-h-full"
+              className="h-[280px] w-full sm:h-[320px] lg:h-full lg:min-h-[320px]"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen
@@ -121,7 +131,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="mt-8 grid gap-8 sm:grid-cols-2">
+        <div className="mt-6 grid gap-6 sm:mt-8 sm:grid-cols-2 sm:gap-8">
           <InfoCard title="Service Options">
             <InfoList items={services} />
           </InfoCard>

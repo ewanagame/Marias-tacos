@@ -14,10 +14,10 @@ export default function Navbar() {
 
   return (
     <header className="relative z-40 border-b border-accent/15 bg-background">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6 sm:py-4">
         <Link
           href="/"
-          className="font-serif text-2xl font-bold text-primary md:text-3xl"
+          className="min-w-0 font-serif text-lg font-bold leading-tight text-primary sm:text-2xl md:text-3xl"
           onClick={() => setIsOpen(false)}
         >
           Maria&apos;s Tacos
@@ -45,7 +45,7 @@ export default function Navbar() {
 
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-md p-2 text-accent transition-colors hover:text-primary md:hidden"
+          className="inline-flex shrink-0 items-center justify-center rounded-md p-2 text-accent transition-colors hover:text-primary md:hidden"
           aria-expanded={isOpen}
           aria-label={isOpen ? "Close menu" : "Open menu"}
           onClick={() => setIsOpen((open) => !open)}
@@ -86,7 +86,7 @@ export default function Navbar() {
       </div>
 
       {isOpen && (
-        <nav className="border-t border-accent/10 bg-background px-6 py-4 md:hidden">
+        <nav className="border-t border-accent/10 bg-background px-4 py-4 sm:px-6 md:hidden">
           <ul className="flex flex-col gap-4">
             {navLinks.map(({ href, label }) => (
               <li key={href}>

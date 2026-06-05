@@ -21,21 +21,21 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative mx-auto flex min-h-[85vh] max-w-6xl flex-col justify-center px-6 py-20">
-        <p className="mb-4 font-sans text-sm font-semibold uppercase tracking-[0.2em] text-secondary">
+      <div className="relative mx-auto flex min-h-[85vh] max-w-6xl flex-col justify-center px-4 py-16 sm:px-6 sm:py-20">
+        <p className="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.15em] text-secondary sm:text-sm">
           Welcome to Maria&apos;s Tacos
         </p>
-        <h1 className="max-w-3xl font-serif text-4xl font-bold leading-tight text-background sm:text-5xl lg:text-6xl">
+        <h1 className="max-w-3xl font-serif text-3xl font-bold leading-tight text-background sm:text-4xl md:text-5xl lg:text-6xl">
           Authentic Mexican Flavors in the Heart of Marshalltown
         </h1>
-        <p className="mt-6 max-w-xl font-sans text-lg leading-relaxed text-background/90">
+        <p className="mt-4 max-w-xl font-sans text-base leading-relaxed text-background/90 sm:mt-6 sm:text-lg">
           Handcrafted tacos, tamales, and family recipes served with warmth
           in downtown Marshalltown.
         </p>
-        <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+        <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:gap-4">
           <Link
             href="/menu"
-            className="inline-flex items-center justify-center rounded-full border-2 border-background bg-background px-8 py-3 font-sans text-sm font-semibold text-primary transition-colors hover:bg-background/90"
+            className="inline-flex items-center justify-center rounded-full border-2 border-background bg-background px-6 py-3 font-sans text-sm font-semibold text-primary transition-colors hover:bg-background/90 sm:px-8"
           >
             View Our Menu
           </Link>
@@ -43,7 +43,7 @@ export default function Hero() {
             href="https://ordermariastacos.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full border-2 border-secondary bg-secondary px-8 py-3 font-sans text-sm font-semibold text-white transition-colors hover:bg-secondary/90"
+            className="inline-flex items-center justify-center rounded-full border-2 border-secondary bg-secondary px-6 py-3 font-sans text-sm font-semibold text-white transition-colors hover:bg-secondary/90 sm:px-8"
           >
             Order Online
           </a>

@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="relative z-0 border-t border-accent/15 bg-background pb-24 sm:pb-10">
-      <div className="mx-auto grid max-w-6xl gap-8 px-6 py-10 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:grid-cols-2 sm:px-6 lg:grid-cols-3">
         <div>
           <h2 className="font-serif text-lg font-bold text-primary">
             Maria&apos;s Tacos
