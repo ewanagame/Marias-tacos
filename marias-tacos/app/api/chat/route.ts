@@ -6,6 +6,8 @@ const SYSTEM_PROMPT =
 const MODEL = "claude-haiku-4-5";
 const MAX_REQUESTS_PER_MINUTE = 20;
 const RATE_LIMIT_WINDOW_MS = 60_000;
+const MAX_MESSAGE_LENGTH = 500;
+const MAX_MESSAGES = 20;
 
 type MessageRole = "user" | "assistant";
 
@@ -50,8 +52,20 @@ function checkRateLimit(ip: string): boolean {
   return true;
 }
 
+function stripHtmlTags(input: string): string {
+  return input.replace(/<[^>]*>/g, "");
+}
+
+function sanitizeContent(content: string): string {
+  return stripHtmlTags(content).trim();
+}
+
 function parseMessages(messages: unknown): ChatMessage[] | null {
   if (!Array.isArray(messages) || messages.length === 0) {
+    return null;
+  }
+
+  if (messages.length > MAX_MESSAGES) {
     return null;
   }
 
@@ -73,11 +87,21 @@ function parseMessages(messages: unknown): ChatMessage[] | null {
       return null;
     }
 
-    if (typeof content !== "string" || content.trim().length === 0) {
+    if (typeof content !== "string") {
       return null;
     }
 
-    parsed.push({ role, content: content.trim() });
+    const sanitizedContent = sanitizeContent(content);
+
+    if (sanitizedContent.length === 0) {
+      return null;
+    }
+
+    if (sanitizedContent.length > MAX_MESSAGE_LENGTH) {
+      return null;
+    }
+
+    parsed.push({ role, content: sanitizedContent });
   }
 
   if (parsed[parsed.length - 1]?.role !== "user") {
@@ -124,7 +148,7 @@ export async function POST(request: Request) {
     return Response.json(
       {
         error:
-          "Invalid messages format. Provide a non-empty array of user/assistant messages ending with a user message.",
+          "Invalid messages format. Provide up to 20 user/assistant messages (max 500 characters each), ending with a user message.",
       },
       { status: 400 },
     );
