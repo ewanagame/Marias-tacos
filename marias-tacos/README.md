@@ -6,7 +6,7 @@ Official website for **Maria's Tacos** — an authentic Mexican restaurant in Ma
 
 - Home, Menu, and Contact pages with a warm rustic design
 - Sticky "Order Online" banner
-- SEO metadata, security headers, and mobile-responsive layout
+- SEO metadata and mobile-responsive layout
 
 ## Prerequisites
 
@@ -41,8 +41,8 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 ### Other commands
 
 ```bash
-npm run build   # Production build
-npm run start   # Run production server locally
+npm run build   # Production build (static export)
+npm run export  # Build for GitHub Pages
 npm run lint    # Run ESLint
 ```
 
@@ -63,45 +63,30 @@ marias-tacos/
 └── lib/site.ts             # Shared site config
 ```
 
-## Deploy to Vercel
+## Deploy to GitHub Pages
 
-Vercel is the recommended host for Next.js apps. Follow these steps:
+Live site: [https://ewanagame.github.io/Marias-tacos/](https://ewanagame.github.io/Marias-tacos/)
 
-### 1. Push your code to GitHub
+### One-time GitHub setup
 
-Make sure your project is committed and pushed to a GitHub repository.
+1. Go to **github.com/ewanagame/Marias-tacos → Settings → Pages**
+2. Under **Build and deployment**, set **Source** to **GitHub Actions**
+3. Push to `main` — the workflow in `.github/workflows/deploy.yml` builds and deploys automatically
 
-### 2. Import the project on Vercel
+### Manual export (optional)
 
-1. Go to [https://vercel.com/new](https://vercel.com/new)
-2. Sign in with your GitHub account
-3. Click **Import** next to your repository
-4. Set the **Root Directory** to `marias-tacos` (if the repo root is the monorepo parent)
-5. Vercel auto-detects Next.js — leave the default build settings:
-   - **Build Command:** `npm run build`
-   - **Output Directory:** `.next`
-   - **Install Command:** `npm install`
-
-### 3. Deploy
-
-Click **Deploy**. Vercel will build and deploy your site. Your live URL will look like:
-
-```
-https://your-project-name.vercel.app
+```bash
+npm run export
 ```
 
-### 4. (Optional) Custom domain
+Static files are output to `marias-tacos/out/`.
 
-1. In your Vercel project, go to **Settings → Domains**
-2. Add your custom domain (e.g. `mariastacos.com`)
-3. Follow Vercel's DNS instructions to point your domain
+### Verify the deployment
 
-### 5. Verify the deployment
-
-After deploy, confirm:
-
-- All pages load: `/`, `/menu`, `/contact`
-- The **Order Online** banner links to [ordermariastacos.com](https://ordermariastacos.com)
+- Home: `/`
+- Menu: `/menu/`
+- Contact: `/contact/`
+- **Order Online** banner links to [ordermariastacos.com](https://ordermariastacos.com)
 
 ## License
 
