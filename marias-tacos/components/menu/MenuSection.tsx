@@ -30,7 +30,7 @@ function MenuItemCard({
 
 export default function MenuSection({ id, title, items }: MenuCategory) {
   return (
-    <section id={id} className="scroll-mt-36 sm:scroll-mt-32">
+    <section id={id} className="scroll-mt-20">
       <h2 className="font-serif text-2xl font-bold text-primary sm:text-3xl">
         {title}
       </h2>

@@ -5,7 +5,6 @@ Official website for **Maria's Tacos** — an authentic Mexican restaurant in Ma
 ## Features
 
 - Home, Menu, and Contact pages with a warm rustic design
-- Sticky "Order Online" banner
 - SEO metadata and mobile-responsive layout
 
 ## Prerequisites
@@ -58,8 +57,7 @@ marias-tacos/
 │   └── icon.svg            # Favicon
 ├── components/
 │   ├── Navbar.tsx          # Site navigation
-│   ├── Footer.tsx          # Site footer
-│   └── OrderBanner.tsx     # Sticky order CTA
+│   └── Footer.tsx          # Site footer
 └── lib/site.ts             # Shared site config
 ```
 
@@ -86,7 +84,7 @@ Static files are output to `marias-tacos/out/`.
 - Home: `/`
 - Menu: `/menu/`
 - Contact: `/contact/`
-- **Order Online** banner links to [ordermariastacos.com](https://ordermariastacos.com)
+- Navbar **Order Online** button links to [ordermariastacos.com](https://ordermariastacos.com)
 
 ## License
 

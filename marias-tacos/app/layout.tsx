@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Lato, Playfair_Display } from "next/font/google";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import OrderBanner from "@/components/OrderBanner";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
@@ -47,7 +46,6 @@ export default function RootLayout({
       <body
         className={`${playfairDisplay.variable} ${lato.variable} flex min-h-screen flex-col`}
       >
-        <OrderBanner />
         <Navbar />
         <main className="relative z-0 flex-1">{children}</main>
         <Footer />

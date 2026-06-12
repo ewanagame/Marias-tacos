@@ -4,7 +4,7 @@ export default function MenuCategoryNav() {
   return (
     <nav
       aria-label="Menu categories"
-      className="sticky top-10 z-10 border-b border-accent/10 bg-background/95 backdrop-blur-sm"
+      className="sticky top-0 z-10 border-b border-accent/10 bg-background/95 backdrop-blur-sm"
     >
       <div className="mx-auto flex max-w-6xl gap-2 overflow-x-auto px-4 py-3 scrollbar-hide sm:px-6 sm:py-4">
         {categoryNav.map(({ id, label }) => (
