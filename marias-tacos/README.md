@@ -68,8 +68,10 @@ Live site: [https://ewanagame.github.io/Marias-tacos/](https://ewanagame.github.
 ### One-time GitHub setup
 
 1. Go to **github.com/ewanagame/Marias-tacos → Settings → Pages**
-2. Under **Build and deployment**, set **Source** to **GitHub Actions**
+2. Under **Build and deployment**, set **Source** to **GitHub Actions** (recommended)
 3. Push to `main` — the workflow in `.github/workflows/deploy.yml` builds and deploys automatically
+
+The workflow also copies the static export to the repository root so the site works if Pages is still set to deploy from the `main` branch.
 
 ### Manual export (optional)
 

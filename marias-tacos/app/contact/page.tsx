@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact & Location",
@@ -82,9 +83,10 @@ export default function Contact() {
               <div>
                 <h3 className="font-semibold text-primary">Address</h3>
                 <address className="mt-2 not-italic">
-                  110 W State St
+                  {siteConfig.address.street}
                   <br />
-                  Marshalltown, IA 50158
+                  {siteConfig.address.city}, {siteConfig.address.state}{" "}
+                  {siteConfig.address.zip}
                 </address>
               </div>
 
@@ -92,24 +94,31 @@ export default function Contact() {
                 <h3 className="font-semibold text-primary">Phone</h3>
                 <p className="mt-2">
                   <a
-                    href="tel:+16417515327"
+                    href={siteConfig.phoneTel}
                     className="transition-colors hover:text-primary"
                   >
-                    (641) 751-5327
+                    {siteConfig.phone}
                   </a>
                 </p>
               </div>
 
               <div>
                 <h3 className="font-semibold text-primary">Hours</h3>
-                <p className="mt-2">Opens 8:30 AM daily</p>
+                <ul className="mt-2 space-y-1">
+                  {siteConfig.hours.map(({ days, time }) => (
+                    <li key={days} className="flex justify-between gap-4">
+                      <span>{days}</span>
+                      <span>{time}</span>
+                    </li>
+                  ))}
+                </ul>
                 <p className="mt-2 text-xs italic text-accent/80">
-                  Hours may vary — please call ahead to confirm.
+                  {siteConfig.hoursNote}
                 </p>
               </div>
 
               <a
-                href="https://www.google.com/maps/dir/?api=1&destination=110+W+State+St,+Marshalltown,+IA+50158"
+                href={siteConfig.mapsDirectionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex w-full items-center justify-center rounded-full border-2 border-primary bg-primary px-6 py-2.5 font-sans text-sm font-semibold text-background transition-colors hover:bg-primary/90 sm:w-auto"
@@ -122,7 +131,7 @@ export default function Contact() {
           <div className="overflow-hidden rounded-2xl border border-accent/10 shadow-[0_4px_20px_rgba(74,55,40,0.08)]">
             <iframe
               title="Maria's Tacos location on Google Maps"
-              src="https://maps.google.com/maps?q=110+W+State+St,+Marshalltown,+IA+50158&hl=en&z=15&output=embed"
+              src={siteConfig.mapsEmbedUrl}
               className="h-[280px] w-full sm:h-[320px] lg:h-full lg:min-h-[320px]"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

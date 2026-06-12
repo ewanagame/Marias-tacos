@@ -10,5 +10,21 @@ export const siteConfig = {
   doorDashUrl:
     "https://www.doordash.com/store/marias-tacos-marshalltown-1094437/",
   doorDashLabel: "Order on DoorDash",
-  address: "110 W State St, Marshalltown, IA 50158",
+  address: {
+    street: "110 W State St",
+    city: "Marshalltown",
+    state: "IA",
+    zip: "50158",
+    full: "110 W State St, Marshalltown, IA 50158",
+  },
+  hours: [
+    { days: "Mon – Thu", time: "11:00 AM – 9:00 PM" },
+    { days: "Fri – Sat", time: "11:00 AM – 10:00 PM" },
+    { days: "Sunday", time: "11:00 AM – 8:00 PM" },
+  ],
+  hoursNote: "Hours may vary — please call ahead to confirm.",
+  mapsDirectionsUrl:
+    "https://www.google.com/maps/dir/?api=1&destination=110+W+State+St,+Marshalltown,+IA+50158",
+  mapsEmbedUrl:
+    "https://maps.google.com/maps?q=110+W+State+St,+Marshalltown,+IA+50158&hl=en&z=15&output=embed",
 };
