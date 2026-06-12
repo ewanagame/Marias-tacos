@@ -1,3 +1,4 @@
+import { siteConfig } from "@/lib/site";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -40,12 +41,10 @@ export default function Hero() {
             View Our Menu
           </Link>
           <a
-            href="https://ordermariastacos.com"
-            target="_blank"
-            rel="noopener noreferrer"
+            href={siteConfig.orderUrl}
             className="inline-flex items-center justify-center rounded-full border-2 border-secondary bg-secondary px-6 py-3 font-sans text-sm font-semibold text-white transition-colors hover:bg-secondary/90 sm:px-8"
           >
-            Order Online
+            {siteConfig.orderLabel}
           </a>
         </div>
       </div>

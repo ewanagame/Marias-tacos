@@ -1,5 +1,6 @@
 "use client";
 
+import { siteConfig } from "@/lib/site";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -34,12 +35,10 @@ export default function Navbar() {
             </Link>
           ))}
           <a
-            href="https://ordermariastacos.com"
-            target="_blank"
-            rel="noopener noreferrer"
+            href={siteConfig.orderUrl}
             className="rounded-md bg-secondary px-4 py-2 font-sans text-sm font-semibold text-white transition-colors hover:bg-secondary/90"
           >
-            Order Online
+            {siteConfig.orderLabel}
           </a>
         </nav>
 
@@ -101,13 +100,11 @@ export default function Navbar() {
             ))}
             <li>
               <a
-                href="https://ordermariastacos.com"
-                target="_blank"
-                rel="noopener noreferrer"
+                href={siteConfig.orderUrl}
                 className="inline-block rounded-md bg-secondary px-4 py-2 font-sans text-sm font-semibold text-white transition-colors hover:bg-secondary/90"
                 onClick={() => setIsOpen(false)}
               >
-                Order Online
+                {siteConfig.orderLabel}
               </a>
             </li>
           </ul>

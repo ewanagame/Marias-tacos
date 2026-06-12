@@ -84,7 +84,7 @@ Static files are output to `marias-tacos/out/`.
 - Home: `/`
 - Menu: `/menu/`
 - Contact: `/contact/`
-- Navbar **Order Online** button links to [ordermariastacos.com](https://ordermariastacos.com)
+- **Call to Order** button dials (641) 751-5327
 
 ## License
 
