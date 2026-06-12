@@ -46,8 +46,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .nojekyll index.html 404.html icon.svg favicon.ico menu contact 404 _next
-          git diff --staged --quiet || git commit -m "Deploy site to GitHub Pages [skip ci]"
-          git push
+          if ! git diff --staged --quiet; then
+            git commit -m "Deploy site to GitHub Pages [skip ci]"
+            git push origin HEAD:main
+          fi
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
