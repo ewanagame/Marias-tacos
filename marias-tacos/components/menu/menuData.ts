@@ -161,42 +161,89 @@ export const menuCategories: MenuCategory[] = [
     items: [
       {
         name: "Pepsi",
+        price: "$1.00",
         description: "Ice-cold fountain soda.",
       },
       {
         name: "Diet Pepsi",
+        price: "$1.00",
         description: "Ice-cold fountain soda.",
       },
       {
         name: "Mountain Dew",
+        price: "$1.00",
         description: "Ice-cold fountain soda.",
       },
       {
         name: "Sprite",
+        price: "$1.00",
         description: "Ice-cold fountain soda.",
       },
       {
         name: "Coke",
+        price: "$1.00",
         description: "Ice-cold fountain soda.",
       },
       {
         name: "Diet Coke",
+        price: "$1.00",
         description: "Ice-cold fountain soda.",
       },
       {
         name: "Bottled Water",
+        price: "$1.00",
         description: "Refreshing bottled water.",
       },
       {
         name: "Lemonade",
-        price: "$2.00",
+        price: "$1.00",
         description: "Fresh, tangy lemonade served cold.",
       },
+    ],
+  },
+  {
+    id: "jarritos",
+    title: "Jarritos",
+    items: [
       {
-        name: "Jarritos",
-        price: "$3.50",
-        description:
-          "Authentic Mexican soda — Mango, Fruit Punch, Pineapple, Strawberry, Mandarin, Lime, Tamarind, or Sangria.",
+        name: "Mango",
+        price: "$2.50",
+        description: "Imported Mexican soda — sweet tropical mango.",
+      },
+      {
+        name: "Fruit Punch",
+        price: "$2.50",
+        description: "Imported Mexican soda — bold fruit punch flavor.",
+      },
+      {
+        name: "Pineapple",
+        price: "$2.50",
+        description: "Imported Mexican soda — bright, refreshing pineapple.",
+      },
+      {
+        name: "Strawberry",
+        price: "$2.50",
+        description: "Imported Mexican soda — sweet strawberry.",
+      },
+      {
+        name: "Mandarin",
+        price: "$2.50",
+        description: "Imported Mexican soda — citrusy mandarin orange.",
+      },
+      {
+        name: "Lime",
+        price: "$2.50",
+        description: "Imported Mexican soda — zesty lime.",
+      },
+      {
+        name: "Tamarind",
+        price: "$2.50",
+        description: "Imported Mexican soda — tangy-sweet tamarind.",
+      },
+      {
+        name: "Sangria",
+        price: "$2.50",
+        description: "Imported Mexican soda — fruity sangria flavor.",
       },
     ],
   },
