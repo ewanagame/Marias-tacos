@@ -84,7 +84,8 @@ Static files are output to `marias-tacos/out/`.
 - Home: `/`
 - Menu: `/menu/`
 - Contact: `/contact/`
-- **Call to Order** button dials (641) 751-5327
+- **Call to Order** dials (641) 751-5327
+- **Order on DoorDash** links to Maria's Tacos on DoorDash
 
 ## License
 

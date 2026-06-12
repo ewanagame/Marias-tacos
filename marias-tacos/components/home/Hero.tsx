@@ -33,7 +33,7 @@ export default function Hero() {
           Handcrafted tacos, tamales, and family recipes served with warmth
           in downtown Marshalltown.
         </p>
-        <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:gap-4">
+        <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-4">
           <Link
             href="/menu"
             className="inline-flex items-center justify-center rounded-full border-2 border-background bg-background px-6 py-3 font-sans text-sm font-semibold text-primary transition-colors hover:bg-background/90 sm:px-8"
@@ -42,9 +42,17 @@ export default function Hero() {
           </Link>
           <a
             href={siteConfig.orderUrl}
-            className="inline-flex items-center justify-center rounded-full border-2 border-secondary bg-secondary px-6 py-3 font-sans text-sm font-semibold text-white transition-colors hover:bg-secondary/90 sm:px-8"
+            className="inline-flex items-center justify-center rounded-full border-2 border-background bg-transparent px-6 py-3 font-sans text-sm font-semibold text-background transition-colors hover:bg-background/10 sm:px-8"
           >
             {siteConfig.orderLabel}
+          </a>
+          <a
+            href={siteConfig.doorDashUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-full border-2 border-secondary bg-secondary px-6 py-3 font-sans text-sm font-semibold text-white transition-colors hover:bg-secondary/90 sm:px-8"
+          >
+            {siteConfig.doorDashLabel}
           </a>
         </div>
       </div>

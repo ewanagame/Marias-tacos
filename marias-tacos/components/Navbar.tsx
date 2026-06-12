@@ -34,12 +34,22 @@ export default function Navbar() {
               {label}
             </Link>
           ))}
-          <a
-            href={siteConfig.orderUrl}
-            className="rounded-md bg-secondary px-4 py-2 font-sans text-sm font-semibold text-white transition-colors hover:bg-secondary/90"
-          >
-            {siteConfig.orderLabel}
-          </a>
+          <div className="flex items-center gap-2">
+            <a
+              href={siteConfig.orderUrl}
+              className="rounded-md border border-primary/20 bg-background px-4 py-2 font-sans text-sm font-semibold text-primary transition-colors hover:bg-primary/5"
+            >
+              {siteConfig.orderLabel}
+            </a>
+            <a
+              href={siteConfig.doorDashUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-md bg-secondary px-4 py-2 font-sans text-sm font-semibold text-white transition-colors hover:bg-secondary/90"
+            >
+              {siteConfig.doorDashLabel}
+            </a>
+          </div>
         </nav>
 
         <button
@@ -98,13 +108,22 @@ export default function Navbar() {
                 </Link>
               </li>
             ))}
-            <li>
+            <li className="flex flex-col gap-2 sm:flex-row">
               <a
                 href={siteConfig.orderUrl}
-                className="inline-block rounded-md bg-secondary px-4 py-2 font-sans text-sm font-semibold text-white transition-colors hover:bg-secondary/90"
+                className="inline-block rounded-md border border-primary/20 bg-background px-4 py-2 text-center font-sans text-sm font-semibold text-primary transition-colors hover:bg-primary/5"
                 onClick={() => setIsOpen(false)}
               >
                 {siteConfig.orderLabel}
+              </a>
+              <a
+                href={siteConfig.doorDashUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block rounded-md bg-secondary px-4 py-2 text-center font-sans text-sm font-semibold text-white transition-colors hover:bg-secondary/90"
+                onClick={() => setIsOpen(false)}
+              >
+                {siteConfig.doorDashLabel}
               </a>
             </li>
           </ul>

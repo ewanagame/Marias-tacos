@@ -9,5 +9,6 @@ export const siteConfig = {
   orderLabel: "Call to Order",
   doorDashUrl:
     "https://www.doordash.com/store/marias-tacos-marshalltown-1094437/",
+  doorDashLabel: "Order on DoorDash",
   address: "110 W State St, Marshalltown, IA 50158",
 };
