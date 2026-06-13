@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AnimatedAnchor } from "@/components/ui/AnimatedButton";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -117,14 +118,15 @@ export default function Contact() {
                 </p>
               </div>
 
-              <a
+              <AnimatedAnchor
                 href={siteConfig.mapsDirectionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex w-full items-center justify-center rounded-full border-2 border-primary bg-primary px-6 py-2.5 font-sans text-sm font-semibold text-background transition-colors hover:bg-primary/90 sm:w-auto"
+                variant="primary"
+                className="w-full sm:w-auto"
               >
                 Get Directions
-              </a>
+              </AnimatedAnchor>
             </div>
           </InfoCard>
 

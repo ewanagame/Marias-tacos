@@ -1,6 +1,10 @@
+import {
+  AnimatedAnchor,
+  AnimatedLink,
+  PhoneIcon,
+} from "@/components/ui/AnimatedButton";
 import { siteConfig } from "@/lib/site";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -34,26 +38,25 @@ export default function Hero() {
           in downtown Marshalltown.
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-4">
-          <Link
-            href="/menu"
-            className="inline-flex items-center justify-center rounded-full border-2 border-background bg-background px-6 py-3 font-sans text-sm font-semibold text-primary transition-colors hover:bg-background/90 sm:px-8"
-          >
+          <AnimatedLink href="/menu" variant="outline-light">
             View Our Menu
-          </Link>
-          <a
+          </AnimatedLink>
+          <AnimatedAnchor
             href={siteConfig.orderUrl}
-            className="inline-flex items-center justify-center rounded-full border-2 border-background bg-transparent px-6 py-3 font-sans text-sm font-semibold text-background transition-colors hover:bg-background/10 sm:px-8"
+            variant="outline-white"
+            cta
+            icon={<PhoneIcon />}
           >
             {siteConfig.orderLabel}
-          </a>
-          <a
+          </AnimatedAnchor>
+          <AnimatedAnchor
             href={siteConfig.doorDashUrl}
+            variant="secondary"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full border-2 border-secondary bg-secondary px-6 py-3 font-sans text-sm font-semibold text-white transition-colors hover:bg-secondary/90 sm:px-8"
           >
             {siteConfig.doorDashLabel}
-          </a>
+          </AnimatedAnchor>
         </div>
       </div>
     </section>

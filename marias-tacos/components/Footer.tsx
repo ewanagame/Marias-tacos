@@ -1,5 +1,10 @@
+import {
+  AnimatedAnchor,
+  NavAnchor,
+  NavLink,
+  PhoneIcon,
+} from "@/components/ui/AnimatedButton";
 import { siteConfig } from "@/lib/site";
-import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -22,28 +27,25 @@ export default function Footer() {
             Contact
           </h3>
           <p className="mt-3 font-sans text-sm text-accent">
-            <a
-              href={siteConfig.phoneTel}
-              className="transition-colors hover:text-primary"
-            >
-              {siteConfig.phone}
-            </a>
+            <NavAnchor href={siteConfig.phoneTel}>{siteConfig.phone}</NavAnchor>
           </p>
           <div className="mt-4 flex flex-col gap-2">
-            <a
+            <AnimatedAnchor
               href={siteConfig.orderUrl}
-              className="inline-flex w-fit rounded-md border border-primary/20 bg-background px-3 py-1.5 font-sans text-xs font-semibold text-primary transition-colors hover:bg-primary/5"
+              variant="footer-outline"
+              cta
+              icon={<PhoneIcon className="h-3.5 w-3.5" />}
             >
               {siteConfig.orderLabel}
-            </a>
-            <a
+            </AnimatedAnchor>
+            <AnimatedAnchor
               href={siteConfig.doorDashUrl}
+              variant="footer-secondary"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex w-fit rounded-md bg-secondary px-3 py-1.5 font-sans text-xs font-semibold text-white transition-colors hover:bg-secondary/90"
             >
               {siteConfig.doorDashLabel}
-            </a>
+            </AnimatedAnchor>
           </div>
         </div>
 
@@ -66,32 +68,21 @@ export default function Footer() {
           <h3 className="font-serif text-base font-bold text-primary">
             Quick Links
           </h3>
-          <ul className="mt-3 space-y-2 font-sans text-sm text-accent">
+          <ul className="mt-3 space-y-2 font-sans text-sm">
             <li>
-              <Link
-                href="/menu"
-                className="transition-colors hover:text-primary"
-              >
-                Menu
-              </Link>
+              <NavLink href="/menu">Menu</NavLink>
             </li>
             <li>
-              <Link
-                href="/contact"
-                className="transition-colors hover:text-primary"
-              >
-                Contact &amp; Location
-              </Link>
+              <NavLink href="/contact">Contact &amp; Location</NavLink>
             </li>
             <li>
-              <a
+              <NavAnchor
                 href={siteConfig.mapsDirectionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-colors hover:text-primary"
               >
                 Get Directions
-              </a>
+              </NavAnchor>
             </li>
           </ul>
         </div>

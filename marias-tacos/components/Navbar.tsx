@@ -1,5 +1,11 @@
 "use client";
 
+import {
+  AnimatedAnchor,
+  IconButton,
+  NavLink,
+  PhoneIcon,
+} from "@/components/ui/AnimatedButton";
 import { siteConfig } from "@/lib/site";
 import Link from "next/link";
 import { useState } from "react";
@@ -18,7 +24,7 @@ export default function Navbar() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6 sm:py-4">
         <Link
           href="/"
-          className="min-w-0 font-serif text-lg font-bold leading-tight text-primary sm:text-2xl md:text-3xl"
+          className="min-w-0 font-serif text-lg font-bold leading-tight text-primary transition-all duration-150 ease-in-out hover:scale-105 hover:text-secondary active:scale-95 sm:text-2xl md:text-3xl"
           onClick={() => setIsOpen(false)}
         >
           Maria&apos;s Tacos
@@ -26,35 +32,33 @@ export default function Navbar() {
 
         <nav className="hidden items-center gap-8 md:flex">
           {navLinks.map(({ href, label }) => (
-            <Link
-              key={href}
-              href={href}
-              className="font-sans text-sm font-medium text-accent transition-colors hover:text-primary"
-            >
+            <NavLink key={href} href={href}>
               {label}
-            </Link>
+            </NavLink>
           ))}
           <div className="flex items-center gap-2">
-            <a
+            <AnimatedAnchor
               href={siteConfig.orderUrl}
-              className="rounded-md border border-primary/20 bg-background px-4 py-2 font-sans text-sm font-semibold text-primary transition-colors hover:bg-primary/5"
+              variant="navbar-outline"
+              cta
+              icon={<PhoneIcon />}
             >
               {siteConfig.orderLabel}
-            </a>
-            <a
+            </AnimatedAnchor>
+            <AnimatedAnchor
               href={siteConfig.doorDashUrl}
+              variant="navbar-secondary"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-md bg-secondary px-4 py-2 font-sans text-sm font-semibold text-white transition-colors hover:bg-secondary/90"
             >
               {siteConfig.doorDashLabel}
-            </a>
+            </AnimatedAnchor>
           </div>
         </nav>
 
-        <button
+        <IconButton
           type="button"
-          className="inline-flex shrink-0 items-center justify-center rounded-md p-2 text-accent transition-colors hover:text-primary md:hidden"
+          className="md:hidden"
           aria-expanded={isOpen}
           aria-label={isOpen ? "Close menu" : "Open menu"}
           onClick={() => setIsOpen((open) => !open)}
@@ -91,7 +95,7 @@ export default function Navbar() {
               <path d="M4 19h16" />
             </svg>
           )}
-        </button>
+        </IconButton>
       </div>
 
       {isOpen && (
@@ -99,32 +103,37 @@ export default function Navbar() {
           <ul className="flex flex-col gap-4">
             {navLinks.map(({ href, label }) => (
               <li key={href}>
-                <Link
+                <NavLink
                   href={href}
-                  className="block font-sans text-base font-medium text-accent transition-colors hover:text-primary"
+                  size="sm"
+                  className="block"
                   onClick={() => setIsOpen(false)}
                 >
                   {label}
-                </Link>
+                </NavLink>
               </li>
             ))}
             <li className="flex flex-col gap-2 sm:flex-row">
-              <a
+              <AnimatedAnchor
                 href={siteConfig.orderUrl}
-                className="inline-block rounded-md border border-primary/20 bg-background px-4 py-2 text-center font-sans text-sm font-semibold text-primary transition-colors hover:bg-primary/5"
+                variant="navbar-outline"
+                cta
+                icon={<PhoneIcon />}
+                className="text-center"
                 onClick={() => setIsOpen(false)}
               >
                 {siteConfig.orderLabel}
-              </a>
-              <a
+              </AnimatedAnchor>
+              <AnimatedAnchor
                 href={siteConfig.doorDashUrl}
+                variant="navbar-secondary"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block rounded-md bg-secondary px-4 py-2 text-center font-sans text-sm font-semibold text-white transition-colors hover:bg-secondary/90"
+                className="text-center"
                 onClick={() => setIsOpen(false)}
               >
                 {siteConfig.doorDashLabel}
-              </a>
+              </AnimatedAnchor>
             </li>
           </ul>
         </nav>
