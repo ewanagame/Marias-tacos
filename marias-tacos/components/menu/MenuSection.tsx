@@ -2,18 +2,23 @@ import type { MenuCategory } from "./menuData";
 
 function MenuItemCard({
   name,
+  emoji,
   price,
   description,
 }: {
   name: string;
+  emoji: string;
   price?: string;
   description: string;
 }) {
   return (
     <article className="rounded-2xl border border-accent/10 bg-[#FFFAF0] p-5 shadow-[0_4px_20px_rgba(74,55,40,0.08)] sm:p-6">
       <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
-        <h3 className="font-serif text-base font-bold text-primary sm:text-lg">
-          {name}
+        <h3 className="flex items-center gap-3 font-serif text-base font-bold text-primary sm:text-lg">
+          <span className="text-2xl leading-none" aria-hidden="true">
+            {emoji}
+          </span>
+          <span>{name}</span>
         </h3>
         {price && (
           <span className="w-fit shrink-0 rounded-full bg-accent px-3 py-1 font-sans text-sm font-semibold text-background">
