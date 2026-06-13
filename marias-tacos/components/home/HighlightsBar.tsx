@@ -1,3 +1,7 @@
+"use client";
+
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
+
 const highlights = [
   {
     label: "Dine-In",
@@ -90,9 +94,11 @@ export default function HighlightsBar() {
   return (
     <section className="border-y border-accent/10 bg-[#F5EBD8]">
       <div className="mx-auto grid max-w-6xl grid-cols-2 gap-4 px-4 py-8 sm:grid-cols-4 sm:gap-6 sm:px-6 sm:py-10">
-        {highlights.map(({ label, icon }) => (
-          <div
+        {highlights.map(({ label, icon }, index) => (
+          <ScrollReveal
             key={label}
+            variant="fade-up"
+            delay={index * 100}
             className="flex flex-col items-center gap-3 text-center"
           >
             <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-accent/15 bg-background text-primary shadow-sm">
@@ -101,7 +107,7 @@ export default function HighlightsBar() {
             <span className="font-sans text-xs font-semibold text-accent sm:text-sm">
               {label}
             </span>
-          </div>
+          </ScrollReveal>
         ))}
       </div>
     </section>

@@ -1,3 +1,7 @@
+"use client";
+
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
+
 const reviews = [
   {
     quote:
@@ -39,19 +43,25 @@ export default function Reviews() {
   return (
     <section className="bg-[#F5EBD8] px-4 py-14 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-6xl">
-        <div className="text-center">
+        <ScrollReveal variant="fade-up" className="text-center">
           <p className="font-sans text-sm font-semibold uppercase tracking-[0.15em] text-secondary">
             What People Say
           </p>
-          <h2 className="mt-3 font-serif text-3xl font-bold text-primary sm:text-4xl">
-            Customer Reviews
-          </h2>
-        </div>
+        </ScrollReveal>
+        <ScrollReveal
+          as="h2"
+          variant="section-header"
+          className="mt-3 text-center font-serif text-3xl font-bold sm:text-4xl"
+        >
+          Customer Reviews
+        </ScrollReveal>
 
         <div className="mt-10 grid gap-6 sm:mt-14 sm:gap-8 md:grid-cols-3">
-          {reviews.map(({ quote, author }) => (
-            <blockquote
+          {reviews.map(({ quote, author }, index) => (
+            <ScrollReveal
               key={author}
+              variant="fade-up"
+              delay={index * 100}
               className="flex h-full flex-col rounded-2xl border border-accent/10 bg-background p-6 shadow-[0_4px_20px_rgba(74,55,40,0.08)] sm:p-8"
             >
               <StarRating />
@@ -63,7 +73,7 @@ export default function Reviews() {
                   {author}
                 </cite>
               </footer>
-            </blockquote>
+            </ScrollReveal>
           ))}
         </div>
       </div>

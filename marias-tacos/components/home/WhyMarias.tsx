@@ -1,3 +1,7 @@
+"use client";
+
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
+
 const reasons = [
   {
     title: "Authentic Recipes",
@@ -70,23 +74,29 @@ export default function WhyMarias() {
   return (
     <section className="bg-background px-4 py-14 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-6xl">
-        <div className="text-center">
+        <ScrollReveal variant="fade-up" className="text-center">
           <p className="font-sans text-sm font-semibold uppercase tracking-[0.15em] text-secondary">
             Our Story
           </p>
-          <h2 className="mt-3 font-serif text-3xl font-bold text-primary sm:text-4xl">
-            Why Maria&apos;s?
-          </h2>
           <p className="mx-auto mt-4 max-w-2xl font-sans text-accent">
             More than a meal — it&apos;s a taste of home, crafted with care in
             the heart of Iowa.
           </p>
-        </div>
+        </ScrollReveal>
+        <ScrollReveal
+          as="h2"
+          variant="section-header"
+          className="mt-3 text-center font-serif text-3xl font-bold sm:text-4xl"
+        >
+          Why Maria&apos;s?
+        </ScrollReveal>
 
         <div className="mt-14 grid gap-8 md:grid-cols-3">
-          {reasons.map(({ title, description, icon }) => (
-            <article
+          {reasons.map(({ title, description, icon }, index) => (
+            <ScrollReveal
               key={title}
+              variant="fade-up"
+              delay={index * 100}
               className="rounded-2xl border border-accent/10 bg-[#FFFAF0] p-6 shadow-[0_4px_20px_rgba(74,55,40,0.08)] transition-transform hover:-translate-y-1 sm:p-8"
             >
               <div className="mb-5 inline-flex rounded-xl border border-primary/10 bg-primary/5 p-3 text-primary">
@@ -98,7 +108,7 @@ export default function WhyMarias() {
               <p className="mt-3 font-sans text-sm leading-relaxed text-accent">
                 {description}
               </p>
-            </article>
+            </ScrollReveal>
           ))}
         </div>
       </div>

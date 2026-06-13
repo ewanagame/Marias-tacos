@@ -1,8 +1,11 @@
+"use client";
+
 import {
   AnimatedAnchor,
   AnimatedLink,
   PhoneIcon,
 } from "@/components/ui/AnimatedButton";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { siteConfig } from "@/lib/site";
 import Image from "next/image";
 
@@ -27,36 +30,57 @@ export default function Hero() {
       />
 
       <div className="relative mx-auto flex min-h-[85vh] max-w-6xl flex-col justify-center px-4 py-16 sm:px-6 sm:py-20">
-        <p className="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.15em] text-secondary sm:text-sm">
+        <ScrollReveal
+          variant="fade-up"
+          triggerOnMount
+          className="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.15em] text-secondary sm:text-sm"
+        >
           Welcome to Maria&apos;s Tacos
-        </p>
-        <h1 className="max-w-3xl font-serif text-3xl font-bold leading-tight text-background sm:text-4xl md:text-5xl lg:text-6xl">
+        </ScrollReveal>
+        <ScrollReveal
+          as="h1"
+          variant="hero-headline"
+          triggerOnMount
+          delay={100}
+          className="max-w-3xl font-serif text-3xl font-bold leading-tight text-background sm:text-4xl md:text-5xl lg:text-6xl"
+        >
           Authentic Mexican Flavors in the Heart of Marshalltown
-        </h1>
-        <p className="mt-4 max-w-xl font-sans text-base leading-relaxed text-background/90 sm:mt-6 sm:text-lg">
+        </ScrollReveal>
+        <ScrollReveal
+          variant="fade-up"
+          triggerOnMount
+          delay={200}
+          className="mt-4 max-w-xl font-sans text-base leading-relaxed text-background/90 sm:mt-6 sm:text-lg"
+        >
           Handcrafted tacos, tamales, and family recipes served with warmth
           in downtown Marshalltown.
-        </p>
+        </ScrollReveal>
         <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-4">
-          <AnimatedLink href="/menu" variant="outline-light">
-            View Our Menu
-          </AnimatedLink>
-          <AnimatedAnchor
-            href={siteConfig.orderUrl}
-            variant="outline-white"
-            cta
-            icon={<PhoneIcon />}
-          >
-            {siteConfig.orderLabel}
-          </AnimatedAnchor>
-          <AnimatedAnchor
-            href={siteConfig.doorDashUrl}
-            variant="secondary"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {siteConfig.doorDashLabel}
-          </AnimatedAnchor>
+          <ScrollReveal variant="hero-cta" triggerOnMount delay={300}>
+            <AnimatedLink href="/menu" variant="outline-light">
+              View Our Menu
+            </AnimatedLink>
+          </ScrollReveal>
+          <ScrollReveal variant="hero-cta" triggerOnMount delay={600}>
+            <AnimatedAnchor
+              href={siteConfig.orderUrl}
+              variant="outline-white"
+              cta
+              icon={<PhoneIcon />}
+            >
+              {siteConfig.orderLabel}
+            </AnimatedAnchor>
+          </ScrollReveal>
+          <ScrollReveal variant="hero-cta" triggerOnMount delay={900}>
+            <AnimatedAnchor
+              href={siteConfig.doorDashUrl}
+              variant="secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {siteConfig.doorDashLabel}
+            </AnimatedAnchor>
+          </ScrollReveal>
         </div>
       </div>
     </section>

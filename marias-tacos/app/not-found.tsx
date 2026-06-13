@@ -1,38 +1,55 @@
+"use client";
+
 import {
   AnimatedAnchor,
   AnimatedLink,
   PhoneIcon,
 } from "@/components/ui/AnimatedButton";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { siteConfig } from "@/lib/site";
 
 export default function NotFound() {
   return (
     <div className="flex flex-1 flex-col items-center justify-center px-4 py-20 text-center sm:px-6">
-      <p className="font-sans text-sm font-semibold uppercase tracking-[0.15em] text-secondary">
-        404
-      </p>
-      <h1 className="mt-4 font-serif text-3xl font-bold text-primary sm:text-4xl">
+      <ScrollReveal variant="fade-up">
+        <p className="font-sans text-sm font-semibold uppercase tracking-[0.15em] text-secondary">
+          404
+        </p>
+      </ScrollReveal>
+      <ScrollReveal
+        as="h1"
+        variant="section-header"
+        className="mt-4 font-serif text-3xl font-bold sm:text-4xl"
+      >
         Page Not Found
-      </h1>
-      <p className="mt-4 max-w-md font-sans text-sm text-accent sm:text-base">
-        Sorry, we couldn&apos;t find that page. Head back home or browse our
-        menu.
-      </p>
+      </ScrollReveal>
+      <ScrollReveal variant="fade-up" delay={100} className="mt-4 max-w-md">
+        <p className="font-sans text-sm text-accent sm:text-base">
+          Sorry, we couldn&apos;t find that page. Head back home or browse our
+          menu.
+        </p>
+      </ScrollReveal>
       <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
-        <AnimatedLink href="/" variant="primary">
-          Back to Home
-        </AnimatedLink>
-        <AnimatedLink href="/menu" variant="outline-primary">
-          View Menu
-        </AnimatedLink>
-        <AnimatedAnchor
-          href={siteConfig.orderUrl}
-          variant="secondary"
-          cta
-          icon={<PhoneIcon />}
-        >
-          {siteConfig.orderLabel}
-        </AnimatedAnchor>
+        <ScrollReveal variant="hero-cta" triggerOnMount delay={200}>
+          <AnimatedLink href="/" variant="primary">
+            Back to Home
+          </AnimatedLink>
+        </ScrollReveal>
+        <ScrollReveal variant="hero-cta" triggerOnMount delay={500}>
+          <AnimatedLink href="/menu" variant="outline-primary">
+            View Menu
+          </AnimatedLink>
+        </ScrollReveal>
+        <ScrollReveal variant="hero-cta" triggerOnMount delay={800}>
+          <AnimatedAnchor
+            href={siteConfig.orderUrl}
+            variant="secondary"
+            cta
+            icon={<PhoneIcon />}
+          >
+            {siteConfig.orderLabel}
+          </AnimatedAnchor>
+        </ScrollReveal>
       </div>
     </div>
   );

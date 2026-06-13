@@ -1,16 +1,19 @@
+"use client";
+
 import {
   AnimatedAnchor,
   NavAnchor,
   NavLink,
   PhoneIcon,
 } from "@/components/ui/AnimatedButton";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { siteConfig } from "@/lib/site";
 
 export default function Footer() {
   return (
     <footer className="relative z-0 border-t border-accent/15 bg-background">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:grid-cols-2 sm:px-6 lg:grid-cols-4">
-        <div>
+        <ScrollReveal variant="fade-up" delay={0}>
           <h2 className="font-serif text-lg font-bold text-primary">
             Maria&apos;s Tacos
           </h2>
@@ -20,9 +23,9 @@ export default function Footer() {
             {siteConfig.address.city}, {siteConfig.address.state}{" "}
             {siteConfig.address.zip}
           </address>
-        </div>
+        </ScrollReveal>
 
-        <div>
+        <ScrollReveal variant="fade-up" delay={100}>
           <h3 className="font-serif text-base font-bold text-primary">
             Contact
           </h3>
@@ -47,9 +50,9 @@ export default function Footer() {
               {siteConfig.doorDashLabel}
             </AnimatedAnchor>
           </div>
-        </div>
+        </ScrollReveal>
 
-        <div>
+        <ScrollReveal variant="fade-up" delay={200}>
           <h3 className="font-serif text-base font-bold text-primary">Hours</h3>
           <ul className="mt-3 space-y-1 font-sans text-sm text-accent">
             {siteConfig.hours.map(({ days, time }) => (
@@ -62,9 +65,9 @@ export default function Footer() {
           <p className="mt-3 text-xs italic text-accent/80">
             {siteConfig.hoursNote}
           </p>
-        </div>
+        </ScrollReveal>
 
-        <div>
+        <ScrollReveal variant="fade-up" delay={300}>
           <h3 className="font-serif text-base font-bold text-primary">
             Quick Links
           </h3>
@@ -85,7 +88,7 @@ export default function Footer() {
               </NavAnchor>
             </li>
           </ul>
-        </div>
+        </ScrollReveal>
       </div>
 
       <div className="border-t border-accent/10 px-6 py-4">
