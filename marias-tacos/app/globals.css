@@ -134,6 +134,116 @@
   }
 }
 
+/* Food carousel */
+.food-carousel {
+  position: relative;
+}
+
+.food-carousel-viewport {
+  container-type: inline-size;
+  overflow: hidden;
+  width: 100%;
+}
+
+.food-carousel-track {
+  display: flex;
+  width: max-content;
+  animation: food-carousel-scroll 55s linear infinite;
+  will-change: transform;
+}
+
+.food-carousel:hover .food-carousel-track {
+  animation-play-state: paused;
+}
+
+.food-carousel-slide {
+  flex: 0 0 100cqi;
+  box-sizing: border-box;
+  padding: 0 0.5rem;
+}
+
+@container (min-width: 640px) {
+  .food-carousel-slide {
+    flex: 0 0 50cqi;
+  }
+}
+
+@container (min-width: 1024px) {
+  .food-carousel-slide {
+    flex: 0 0 33.333cqi;
+  }
+}
+
+.food-carousel-image-wrap {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(74, 55, 40, 0.12);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.food-carousel-slide:hover .food-carousel-image-wrap {
+  transform: scale(1.05);
+  box-shadow: 0 8px 28px rgba(212, 114, 26, 0.25);
+}
+
+.food-carousel-fade-left,
+.food-carousel-fade-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+  width: 4rem;
+  pointer-events: none;
+}
+
+.food-carousel-fade-left {
+  left: 0;
+  background: linear-gradient(to right, #fdf5e6, transparent);
+}
+
+.food-carousel-fade-right {
+  right: 0;
+  background: linear-gradient(to left, #fdf5e6, transparent);
+}
+
+@keyframes food-carousel-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .food-carousel-track {
+    animation: none;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .food-carousel-slide {
+    flex: 0 0 100%;
+  }
+
+  @container (min-width: 640px) {
+    .food-carousel-slide {
+      flex: 0 0 50%;
+    }
+  }
+
+  @container (min-width: 1024px) {
+    .food-carousel-slide {
+      flex: 0 0 33.333%;
+    }
+  }
+}
+
 @keyframes cta-pulse {
   0%,
   100% {

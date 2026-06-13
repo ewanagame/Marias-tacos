@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import FoodCarousel from "@/components/home/FoodCarousel";
 import Hero from "@/components/home/Hero";
 import HighlightsBar from "@/components/home/HighlightsBar";
 import Reviews from "@/components/home/Reviews";
@@ -16,6 +17,7 @@ export default function Home() {
       <Hero />
       <HighlightsBar />
       <WhyMarias />
+      <FoodCarousel />
       <Reviews />
     </>
   );
