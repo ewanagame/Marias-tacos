@@ -71,7 +71,12 @@ export default function Hero() {
               {siteConfig.orderLabel}
             </AnimatedAnchor>
           </ScrollReveal>
-          <ScrollReveal variant="hero-cta" triggerOnMount delay={900}>
+          <ScrollReveal variant="hero-cta" triggerOnMount delay={750}>
+            <AnimatedLink href="/gallery" variant="outline-white">
+              View Our Gallery 📸
+            </AnimatedLink>
+          </ScrollReveal>
+          <ScrollReveal variant="hero-cta" triggerOnMount delay={1050}>
             <AnimatedAnchor
               href={siteConfig.doorDashUrl}
               variant="secondary"
