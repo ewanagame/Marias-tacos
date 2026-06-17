@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatedAnchor } from "@/components/ui/AnimatedButton";
+import DoorDashOrderButton from "@/components/ui/DoorDashOrderButton";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { siteConfig } from "@/lib/site";
 
@@ -86,6 +87,9 @@ export default function ContactContent() {
               and a welcoming atmosphere for the whole family.
             </p>
           </ScrollReveal>
+          <ScrollReveal variant="fade-up" delay={200} className="mt-6">
+            <DoorDashOrderButton size="hero" className="mx-auto" />
+          </ScrollReveal>
         </div>
       </div>
 
@@ -135,7 +139,7 @@ export default function ContactContent() {
                   href={siteConfig.mapsDirectionsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  variant="primary"
+                  variant="outline-primary"
                   className="w-full sm:w-auto"
                 >
                   Get Directions

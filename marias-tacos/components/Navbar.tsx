@@ -6,6 +6,7 @@ import {
   NavLink,
   PhoneIcon,
 } from "@/components/ui/AnimatedButton";
+import DoorDashOrderButton from "@/components/ui/DoorDashOrderButton";
 import { siteConfig } from "@/lib/site";
 import Link from "next/link";
 import { useState } from "react";
@@ -41,19 +42,11 @@ export default function Navbar() {
             <AnimatedAnchor
               href={siteConfig.orderUrl}
               variant="navbar-outline"
-              cta
               icon={<PhoneIcon />}
             >
               {siteConfig.orderLabel}
             </AnimatedAnchor>
-            <AnimatedAnchor
-              href={siteConfig.doorDashUrl}
-              variant="navbar-secondary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {siteConfig.doorDashLabel}
-            </AnimatedAnchor>
+            <DoorDashOrderButton size="navbar" />
           </div>
         </nav>
 
@@ -115,25 +108,19 @@ export default function Navbar() {
               </li>
             ))}
             <li className="flex flex-col gap-2 sm:flex-row">
+              <DoorDashOrderButton
+                size="navbar"
+                className="text-center"
+                onClick={() => setIsOpen(false)}
+              />
               <AnimatedAnchor
                 href={siteConfig.orderUrl}
                 variant="navbar-outline"
-                cta
                 icon={<PhoneIcon />}
                 className="text-center"
                 onClick={() => setIsOpen(false)}
               >
                 {siteConfig.orderLabel}
-              </AnimatedAnchor>
-              <AnimatedAnchor
-                href={siteConfig.doorDashUrl}
-                variant="navbar-secondary"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-center"
-                onClick={() => setIsOpen(false)}
-              >
-                {siteConfig.doorDashLabel}
               </AnimatedAnchor>
             </li>
           </ul>

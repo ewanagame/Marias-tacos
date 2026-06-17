@@ -6,6 +6,7 @@ import {
   NavLink,
   PhoneIcon,
 } from "@/components/ui/AnimatedButton";
+import DoorDashOrderButton from "@/components/ui/DoorDashOrderButton";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { siteConfig } from "@/lib/site";
 
@@ -33,21 +34,13 @@ export default function Footer() {
             <NavAnchor href={siteConfig.phoneTel}>{siteConfig.phone}</NavAnchor>
           </p>
           <div className="mt-4 flex flex-col gap-2">
+            <DoorDashOrderButton size="footer" />
             <AnimatedAnchor
               href={siteConfig.orderUrl}
               variant="footer-outline"
-              cta
               icon={<PhoneIcon className="h-3.5 w-3.5" />}
             >
               {siteConfig.orderLabel}
-            </AnimatedAnchor>
-            <AnimatedAnchor
-              href={siteConfig.doorDashUrl}
-              variant="footer-secondary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {siteConfig.doorDashLabel}
             </AnimatedAnchor>
           </div>
         </ScrollReveal>

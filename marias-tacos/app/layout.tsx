@@ -3,6 +3,7 @@ import { Lato, Playfair_Display } from "next/font/google";
 import Footer from "@/components/Footer";
 import LocalBusinessJsonLd from "@/components/LocalBusinessJsonLd";
 import Navbar from "@/components/Navbar";
+import StickyOrderBar from "@/components/StickyOrderBar";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
@@ -49,8 +50,9 @@ export default function RootLayout({
       >
         <LocalBusinessJsonLd />
         <Navbar />
-        <main className="relative z-0 flex-1">{children}</main>
+        <main className="relative z-0 flex-1 pb-[4.75rem] md:pb-0">{children}</main>
         <Footer />
+        <StickyOrderBar />
       </body>
     </html>
   );

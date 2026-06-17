@@ -9,7 +9,7 @@ export const siteConfig = {
   orderLabel: "Call to Order",
   doorDashUrl:
     "https://www.doordash.com/store/marias-tacos-marshalltown-1094437/",
-  doorDashLabel: "Order on DoorDash",
+  doorDashLabel: "Order Now",
   address: {
     street: "110 W State St",
     city: "Marshalltown",

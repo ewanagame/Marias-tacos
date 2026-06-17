@@ -18,7 +18,11 @@ export type ButtonVariant =
   | "navbar-secondary"
   | "footer-outline"
   | "footer-secondary"
-  | "menu-pill";
+  | "menu-pill"
+  | "doordash"
+  | "doordash-navbar"
+  | "doordash-footer"
+  | "doordash-sticky";
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary: "btn-primary",
@@ -31,7 +35,18 @@ const variantClasses: Record<ButtonVariant, string> = {
   "footer-outline": "btn-footer-outline",
   "footer-secondary": "btn-footer-secondary",
   "menu-pill": "btn-menu-pill",
+  doordash: "btn-doordash",
+  "doordash-navbar": "btn-doordash-navbar",
+  "doordash-footer": "btn-doordash-footer",
+  "doordash-sticky": "btn-doordash-sticky",
 };
+
+const doorDashVariants = new Set<ButtonVariant>([
+  "doordash",
+  "doordash-navbar",
+  "doordash-footer",
+  "doordash-sticky",
+]);
 
 type SharedProps = {
   variant: ButtonVariant;
@@ -95,7 +110,13 @@ function buildClassName(
   cta: boolean | undefined,
   className?: string,
 ) {
-  return [variantClasses[variant], cta ? "btn-cta-pulse" : "", className]
+  const isDoorDash = doorDashVariants.has(variant);
+
+  return [
+    variantClasses[variant],
+    isDoorDash ? "btn-doordash-pulse" : cta ? "btn-cta-pulse" : "",
+    className,
+  ]
     .filter(Boolean)
     .join(" ");
 }
@@ -118,6 +139,20 @@ export function PhoneIcon({ className = "h-4 w-4" }: { className?: string }) {
   );
 }
 
+export function DoorDashIcon({ className = "h-5 w-5" }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M8 7V5.5A4 4 0 0 1 16 5.5V7h3a1 1 0 0 1 1 1v10.5A2.5 2.5 0 0 1 17.5 21h-11A2.5 2.5 0 0 1 4 18.5V8a1 1 0 0 1 1-1h3zm2 0h4V5.5a2 2 0 0 0-4 0V7zm-1 5.25a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5zm8 0a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5z" />
+    </svg>
+  );
+}
+
 type AnimatedLinkProps = SharedProps &
   Omit<ComponentProps<typeof Link>, "className" | "children">;
 
@@ -130,7 +165,7 @@ export function AnimatedLink({
   onClick,
   ...props
 }: AnimatedLinkProps) {
-  const { ripples, addRipple } = useRipple(!!cta);
+  const { ripples, addRipple } = useRipple(!!cta || doorDashVariants.has(variant));
 
   return (
     <Link
@@ -160,7 +195,7 @@ export function AnimatedAnchor({
   onClick,
   ...props
 }: AnimatedAnchorProps) {
-  const { ripples, addRipple } = useRipple(!!cta);
+  const { ripples, addRipple } = useRipple(!!cta || doorDashVariants.has(variant));
 
   return (
     <a

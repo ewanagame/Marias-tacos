@@ -5,6 +5,7 @@ import {
   AnimatedLink,
   PhoneIcon,
 } from "@/components/ui/AnimatedButton";
+import DoorDashOrderButton from "@/components/ui/DoorDashOrderButton";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { siteConfig } from "@/lib/site";
 import Image from "next/image";
@@ -55,36 +56,28 @@ export default function Hero() {
           Handcrafted tacos, tamales, and family recipes served with warmth
           in downtown Marshalltown.
         </ScrollReveal>
-        <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-4">
+        <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
           <ScrollReveal variant="hero-cta" triggerOnMount delay={300}>
+            <DoorDashOrderButton size="hero" />
+          </ScrollReveal>
+          <ScrollReveal variant="hero-cta" triggerOnMount delay={500}>
             <AnimatedLink href="/menu" variant="outline-light">
               View Our Menu
             </AnimatedLink>
           </ScrollReveal>
-          <ScrollReveal variant="hero-cta" triggerOnMount delay={600}>
+          <ScrollReveal variant="hero-cta" triggerOnMount delay={700}>
             <AnimatedAnchor
               href={siteConfig.orderUrl}
               variant="outline-white"
-              cta
               icon={<PhoneIcon />}
             >
               {siteConfig.orderLabel}
             </AnimatedAnchor>
           </ScrollReveal>
-          <ScrollReveal variant="hero-cta" triggerOnMount delay={750}>
+          <ScrollReveal variant="hero-cta" triggerOnMount delay={900}>
             <AnimatedLink href="/gallery" variant="outline-white">
               View Our Gallery 📸
             </AnimatedLink>
-          </ScrollReveal>
-          <ScrollReveal variant="hero-cta" triggerOnMount delay={1050}>
-            <AnimatedAnchor
-              href={siteConfig.doorDashUrl}
-              variant="secondary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {siteConfig.doorDashLabel}
-            </AnimatedAnchor>
           </ScrollReveal>
         </div>
       </div>
