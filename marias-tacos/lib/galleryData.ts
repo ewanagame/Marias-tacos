@@ -5,7 +5,7 @@ export type GalleryCarouselImage = {
 
 /** Gallery page carousel — swap `src` paths with real photos in /public/gallery/ */
 export const galleryCarouselImages: GalleryCarouselImage[] = [
-  { src: "/gallery/burritos.svg", alt: "Burritos" },
+  { src: "/gallery/burritos.svg", alt: "🌯 Burritos (most popular)" },
   { src: "/gallery/tortas.svg", alt: "Tortas" },
   { src: "/gallery/nachos.svg", alt: "Nachos" },
   { src: "/gallery/tostadas.svg", alt: "Tostadas" },
