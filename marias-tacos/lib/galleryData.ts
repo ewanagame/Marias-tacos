@@ -5,11 +5,11 @@ export type GalleryCarouselImage = {
 
 /** Gallery page carousel — swap `src` paths with real photos in /public/gallery/ */
 export const galleryCarouselImages: GalleryCarouselImage[] = [
-  { src: "/gallery/tacos.svg", alt: "Tacos" },
   { src: "/gallery/burritos.svg", alt: "Burritos" },
-  { src: "/gallery/salsa.svg", alt: "Salsa" },
-  { src: "/gallery/quesadillas.svg", alt: "Quesadillas" },
-  { src: "/gallery/drinks.svg", alt: "Drinks" },
+  { src: "/gallery/tortas.svg", alt: "Tortas" },
+  { src: "/gallery/nachos.svg", alt: "Nachos" },
+  { src: "/gallery/tostadas.svg", alt: "Tostadas" },
+  { src: "/gallery/taco-salad.svg", alt: "Taco Salad" },
 ];
 
 export type GalleryPhoto = {

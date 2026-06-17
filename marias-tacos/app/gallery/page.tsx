@@ -5,7 +5,7 @@ import GalleryPageHeader from "@/components/gallery/GalleryPageHeader";
 export const metadata: Metadata = {
   title: "Gallery",
   description:
-    "Browse photos of tacos, burritos, tamales, and more at Maria's Tacos in Marshalltown, IA.",
+    "Browse photos of burritos, tortas, nachos, tostadas, taco salad, and more at Maria's Tacos in Marshalltown, IA.",
 };
 
 export default function GalleryPage() {
