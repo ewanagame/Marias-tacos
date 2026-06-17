@@ -47,7 +47,7 @@ export default function FoodCarousel() {
         </div>
 
         <ScrollReveal variant="fade-up" delay={200} className="mt-10 text-center">
-          <AnimatedLink href="/gallery" variant="primary">
+          <AnimatedLink href="/gallery" variant="outline-primary">
             View Our Gallery 📸
           </AnimatedLink>
         </ScrollReveal>

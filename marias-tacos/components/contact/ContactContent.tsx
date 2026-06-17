@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatedAnchor } from "@/components/ui/AnimatedButton";
+import DoorDashOrderButton from "@/components/ui/DoorDashOrderButton";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { siteConfig } from "@/lib/site";
 

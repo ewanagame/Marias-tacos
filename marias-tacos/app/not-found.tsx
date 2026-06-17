@@ -43,8 +43,7 @@ export default function NotFound() {
         <ScrollReveal variant="hero-cta" triggerOnMount delay={800}>
           <AnimatedAnchor
             href={siteConfig.orderUrl}
-            variant="secondary"
-            cta
+            variant="outline-primary"
             icon={<PhoneIcon />}
           >
             {siteConfig.orderLabel}
