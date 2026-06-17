@@ -1,3 +1,17 @@
+export type GalleryCarouselImage = {
+  src: string;
+  alt: string;
+};
+
+/** Gallery page carousel — swap `src` paths with real photos in /public/gallery/ */
+export const galleryCarouselImages: GalleryCarouselImage[] = [
+  { src: "/gallery/tacos.svg", alt: "Tacos" },
+  { src: "/gallery/burritos.svg", alt: "Burritos" },
+  { src: "/gallery/salsa.svg", alt: "Salsa" },
+  { src: "/gallery/quesadillas.svg", alt: "Quesadillas" },
+  { src: "/gallery/drinks.svg", alt: "Drinks" },
+];
+
 export type GalleryPhoto = {
   label: string;
   src: string;

@@ -12,8 +12,10 @@ export default function GalleryPage() {
   return (
     <>
       <GalleryPageHeader />
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
-        <GalleryGrid />
+      <div className="bg-background px-4 py-12 sm:px-6 sm:py-16">
+        <div className="mx-auto max-w-6xl">
+          <GalleryGrid />
+        </div>
       </div>
     </>
   );
