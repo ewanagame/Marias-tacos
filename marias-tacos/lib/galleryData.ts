@@ -5,8 +5,10 @@ export type GalleryCarouselImage = {
 
 /** Gallery page carousel — swap `src` paths with real photos in /public/gallery/ */
 export const galleryCarouselImages: GalleryCarouselImage[] = [
-  { src: "/gallery/tacos.svg", alt: "Tacos" },
+  { src: "/gallery/street-tacos.jpg", alt: "Tacos" },
   { src: "/gallery/burritos.jpg", alt: "Burritos" },
+  { src: "/gallery/taco-salad.jpg", alt: "Taco Salad" },
+  { src: "/gallery/burrito-bowl.jpg", alt: "Burrito Bowl" },
   { src: "/gallery/salsa.svg", alt: "Salsa" },
   { src: "/gallery/quesadillas.svg", alt: "Quesadillas" },
   { src: "/gallery/drinks.svg", alt: "Drinks" },
@@ -21,13 +23,18 @@ export type GalleryPhoto = {
 export const galleryPhotos: GalleryPhoto[] = [
   {
     label: "Street Tacos",
-    src: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&auto=format&fit=crop&q=80",
-    aspect: "portrait",
+    src: "/gallery/street-tacos.jpg",
+    aspect: "square",
   },
   {
-    label: "Carne Asada Tacos",
-    src: "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=800&auto=format&fit=crop&q=80",
-    aspect: "landscape",
+    label: "Taco Salad",
+    src: "/gallery/taco-salad.jpg",
+    aspect: "square",
+  },
+  {
+    label: "Burrito Bowl",
+    src: "/gallery/burrito-bowl.jpg",
+    aspect: "square",
   },
   {
     label: "Burrito",

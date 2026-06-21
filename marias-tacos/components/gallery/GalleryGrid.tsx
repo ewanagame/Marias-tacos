@@ -64,7 +64,7 @@ export default function GalleryGrid() {
       >
         {galleryCarouselImages.map((image) => (
           <figure
-            key={image.alt}
+            key={image.src}
             className="gallery-carousel-card group snap-center shrink-0"
           >
             <div className="gallery-carousel-image-wrap">
