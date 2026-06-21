@@ -3,15 +3,12 @@ export type GalleryCarouselImage = {
   alt: string;
 };
 
-/** Gallery page carousel — swap `src` paths with real photos in /public/gallery/ */
+/** Gallery page carousel — real photos from Maria's Tacos */
 export const galleryCarouselImages: GalleryCarouselImage[] = [
-  { src: "/gallery/street-tacos.jpg", alt: "Tacos" },
+  { src: "/gallery/street-tacos.jpg", alt: "Street Tacos" },
   { src: "/gallery/burritos.jpg", alt: "Burritos" },
   { src: "/gallery/taco-salad.jpg", alt: "Taco Salad" },
   { src: "/gallery/burrito-bowl.jpg", alt: "Burrito Bowl" },
-  { src: "/gallery/salsa.svg", alt: "Salsa" },
-  { src: "/gallery/quesadillas.svg", alt: "Quesadillas" },
-  { src: "/gallery/drinks.svg", alt: "Drinks" },
 ];
 
 export type GalleryPhoto = {
@@ -27,6 +24,11 @@ export const galleryPhotos: GalleryPhoto[] = [
     aspect: "square",
   },
   {
+    label: "Burrito",
+    src: "/gallery/burritos.jpg",
+    aspect: "square",
+  },
+  {
     label: "Taco Salad",
     src: "/gallery/taco-salad.jpg",
     aspect: "square",
@@ -35,31 +37,6 @@ export const galleryPhotos: GalleryPhoto[] = [
     label: "Burrito Bowl",
     src: "/gallery/burrito-bowl.jpg",
     aspect: "square",
-  },
-  {
-    label: "Burrito",
-    src: "/gallery/burritos.jpg",
-    aspect: "square",
-  },
-  {
-    label: "Nachos",
-    src: "https://images.unsplash.com/photo-1582169296194-e4d644c48063?w=800&auto=format&fit=crop&q=80",
-    aspect: "landscape",
-  },
-  {
-    label: "Tamales",
-    src: "https://images.unsplash.com/photo-1615870216519-2f9fa575fa5c?w=800&auto=format&fit=crop&q=80",
-    aspect: "square",
-  },
-  {
-    label: "Pozole",
-    src: "https://images.unsplash.com/photo-1547592180-85f173990554?w=800&auto=format&fit=crop&q=80",
-    aspect: "landscape",
-  },
-  {
-    label: "Quesadilla",
-    src: "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=800&auto=format&fit=crop&q=80",
-    aspect: "portrait",
   },
 ];
 
