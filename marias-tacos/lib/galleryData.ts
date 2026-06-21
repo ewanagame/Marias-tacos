@@ -6,7 +6,7 @@ export type GalleryCarouselImage = {
 /** Gallery page carousel — swap `src` paths with real photos in /public/gallery/ */
 export const galleryCarouselImages: GalleryCarouselImage[] = [
   { src: "/gallery/tacos.svg", alt: "Tacos" },
-  { src: "/gallery/burritos.svg", alt: "Burritos" },
+  { src: "/gallery/burritos.jpg", alt: "Burritos" },
   { src: "/gallery/salsa.svg", alt: "Salsa" },
   { src: "/gallery/quesadillas.svg", alt: "Quesadillas" },
   { src: "/gallery/drinks.svg", alt: "Drinks" },
@@ -31,8 +31,8 @@ export const galleryPhotos: GalleryPhoto[] = [
   },
   {
     label: "Burrito",
-    src: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=800&auto=format&fit=crop&q=80",
-    aspect: "portrait",
+    src: "/gallery/burritos.jpg",
+    aspect: "square",
   },
   {
     label: "Nachos",
