@@ -1,13 +1,11 @@
 "use client";
 
 import {
-  AnimatedAnchor,
   AnimatedLink,
-  PhoneIcon,
 } from "@/components/ui/AnimatedButton";
+import CallToOrderButton from "@/components/ui/CallToOrderButton";
 import DoorDashOrderButton from "@/components/ui/DoorDashOrderButton";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { siteConfig } from "@/lib/site";
 import Image from "next/image";
 
 export default function Hero() {
@@ -66,13 +64,7 @@ export default function Hero() {
             </AnimatedLink>
           </ScrollReveal>
           <ScrollReveal variant="hero-cta" triggerOnMount delay={700}>
-            <AnimatedAnchor
-              href={siteConfig.orderUrl}
-              variant="outline-white"
-              icon={<PhoneIcon />}
-            >
-              {siteConfig.orderLabel}
-            </AnimatedAnchor>
+            <CallToOrderButton size="hero" />
           </ScrollReveal>
           <ScrollReveal variant="hero-cta" triggerOnMount delay={900}>
             <AnimatedLink href="/gallery" variant="outline-white">
