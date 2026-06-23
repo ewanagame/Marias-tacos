@@ -5,10 +5,10 @@ export type GalleryCarouselImage = {
 
 /** Gallery page carousel — real photos from Maria's Tacos */
 export const galleryCarouselImages: GalleryCarouselImage[] = [
-  { src: "/gallery/street-tacos.jpg", alt: "Street Tacos" },
-  { src: "/gallery/burritos.jpg", alt: "Burritos" },
-  { src: "/gallery/taco-salad.jpg", alt: "Taco Salad" },
-  { src: "/gallery/burrito-bowl.jpg", alt: "Burrito Bowl" },
+  { src: "/gallery/street-tacos.jpg", alt: "Burritos" },
+  { src: "/gallery/burritos.jpg", alt: "Nachos" },
+  { src: "/gallery/taco-salad.jpg", alt: "Tostadas" },
+  { src: "/gallery/burrito-bowl.jpg", alt: "Taco-salad" },
 ];
 
 export type GalleryPhoto = {
@@ -19,22 +19,22 @@ export type GalleryPhoto = {
 
 export const galleryPhotos: GalleryPhoto[] = [
   {
-    label: "Street Tacos",
+    label: "Burritos",
     src: "/gallery/street-tacos.jpg",
     aspect: "square",
   },
   {
-    label: "Burrito",
+    label: "Nachos",
     src: "/gallery/burritos.jpg",
     aspect: "square",
   },
   {
-    label: "Taco Salad",
+    label: "Tostadas",
     src: "/gallery/taco-salad.jpg",
     aspect: "square",
   },
   {
-    label: "Burrito Bowl",
+    label: "Taco-salad",
     src: "/gallery/burrito-bowl.jpg",
     aspect: "square",
   },
