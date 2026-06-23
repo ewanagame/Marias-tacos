@@ -1,13 +1,11 @@
 "use client";
 
 import {
-  AnimatedAnchor,
   IconButton,
   NavLink,
-  PhoneIcon,
 } from "@/components/ui/AnimatedButton";
+import CallToOrderButton from "@/components/ui/CallToOrderButton";
 import DoorDashOrderButton from "@/components/ui/DoorDashOrderButton";
-import { siteConfig } from "@/lib/site";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -39,13 +37,7 @@ export default function Navbar() {
             </NavLink>
           ))}
           <div className="flex items-center gap-2">
-            <AnimatedAnchor
-              href={siteConfig.orderUrl}
-              variant="navbar-outline"
-              icon={<PhoneIcon />}
-            >
-              {siteConfig.orderLabel}
-            </AnimatedAnchor>
+            <CallToOrderButton size="navbar" />
             <DoorDashOrderButton size="navbar" />
           </div>
         </nav>
@@ -113,15 +105,11 @@ export default function Navbar() {
                 className="text-center"
                 onClick={() => setIsOpen(false)}
               />
-              <AnimatedAnchor
-                href={siteConfig.orderUrl}
-                variant="navbar-outline"
-                icon={<PhoneIcon />}
+              <CallToOrderButton
+                size="navbar"
                 className="text-center"
                 onClick={() => setIsOpen(false)}
-              >
-                {siteConfig.orderLabel}
-              </AnimatedAnchor>
+              />
             </li>
           </ul>
         </nav>

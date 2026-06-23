@@ -3,13 +3,12 @@ export type GalleryCarouselImage = {
   alt: string;
 };
 
-/** Gallery page carousel — swap `src` paths with real photos in /public/gallery/ */
+/** Gallery page carousel — real photos from Maria's Tacos */
 export const galleryCarouselImages: GalleryCarouselImage[] = [
-  { src: "/gallery/burritos.svg", alt: "🌯 Burritos (most popular)" },
-  { src: "/gallery/tortas.svg", alt: "Tortas" },
-  { src: "/gallery/nachos.svg", alt: "Nachos" },
-  { src: "/gallery/tostadas.svg", alt: "Tostadas" },
-  { src: "/gallery/taco-salad.svg", alt: "Taco Salad" },
+  { src: "/gallery/street-tacos.jpg", alt: "Street Tacos" },
+  { src: "/gallery/burritos.jpg", alt: "Burritos" },
+  { src: "/gallery/taco-salad.jpg", alt: "Taco Salad" },
+  { src: "/gallery/burrito-bowl.jpg", alt: "Burrito Bowl" },
 ];
 
 export type GalleryPhoto = {
@@ -21,38 +20,23 @@ export type GalleryPhoto = {
 export const galleryPhotos: GalleryPhoto[] = [
   {
     label: "Street Tacos",
-    src: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&auto=format&fit=crop&q=80",
-    aspect: "portrait",
-  },
-  {
-    label: "Carne Asada Tacos",
-    src: "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=800&auto=format&fit=crop&q=80",
-    aspect: "landscape",
-  },
-  {
-    label: "Burrito",
-    src: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=800&auto=format&fit=crop&q=80",
-    aspect: "portrait",
-  },
-  {
-    label: "Nachos",
-    src: "https://images.unsplash.com/photo-1582169296194-e4d644c48063?w=800&auto=format&fit=crop&q=80",
-    aspect: "landscape",
-  },
-  {
-    label: "Tamales",
-    src: "https://images.unsplash.com/photo-1615870216519-2f9fa575fa5c?w=800&auto=format&fit=crop&q=80",
+    src: "/gallery/street-tacos.jpg",
     aspect: "square",
   },
   {
-    label: "Pozole",
-    src: "https://images.unsplash.com/photo-1547592180-85f173990554?w=800&auto=format&fit=crop&q=80",
-    aspect: "landscape",
+    label: "Burrito",
+    src: "/gallery/burritos.jpg",
+    aspect: "square",
   },
   {
-    label: "Quesadilla",
-    src: "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=800&auto=format&fit=crop&q=80",
-    aspect: "portrait",
+    label: "Taco Salad",
+    src: "/gallery/taco-salad.jpg",
+    aspect: "square",
+  },
+  {
+    label: "Burrito Bowl",
+    src: "/gallery/burrito-bowl.jpg",
+    aspect: "square",
   },
 ];
 

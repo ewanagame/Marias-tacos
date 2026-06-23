@@ -106,6 +106,43 @@
     @apply rounded-2xl px-6 py-3.5 text-base;
   }
 
+  /* Call to Order — cream background, brown/orange accents */
+  .btn-call-to-order {
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden;
+    @apply cursor-pointer font-sans font-medium;
+    @apply border-2 border-primary/20 bg-background text-primary;
+    @apply shadow-[0_2px_8px_rgba(74,55,40,0.08)];
+    @apply transition-all duration-200 ease-out;
+    @apply hover:scale-[1.03] hover:border-secondary/45 hover:bg-[#F5EBD8];
+    @apply hover:shadow-[0_4px_18px_rgba(212,114,26,0.28),0_0_0_1px_rgba(212,114,26,0.1)];
+    @apply active:scale-[0.98] active:border-primary/35 active:bg-[#EDE0C8];
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+
+  .btn-call-to-order-navbar {
+    @apply rounded-lg px-4 py-2.5 text-[0.9375rem] sm:px-[1.125rem] sm:py-[0.7rem] sm:text-base;
+  }
+
+  .btn-call-to-order-footer {
+    @apply w-fit rounded-lg px-3.5 py-2 text-[0.8125rem] sm:text-sm;
+  }
+
+  .btn-call-to-order-hero {
+    @apply rounded-full border-background/70 bg-transparent px-[1.15rem] py-[0.7rem] text-[0.9375rem] text-background sm:px-6 sm:py-3 sm:text-base;
+    @apply hover:border-background/85 hover:bg-background/15 hover:text-background;
+    @apply hover:shadow-[0_4px_18px_rgba(253,245,230,0.22),0_0_0_1px_rgba(253,245,230,0.12)];
+    @apply active:border-background/70 active:bg-background/25;
+  }
+
+  .btn-call-to-order .btn-icon {
+    animation: phone-icon-breathe 2.8s ease-in-out infinite;
+  }
+
+  .btn-call-to-order:hover .btn-icon {
+    animation: none;
+    @apply scale-110;
+  }
+
   .btn-doordash-pulse {
     animation: doordash-pulse 3.5s ease-in-out infinite;
   }
@@ -303,6 +340,14 @@
     animation: none !important;
   }
 
+  .btn-call-to-order .btn-icon {
+    animation: none !important;
+  }
+
+  .btn-call-to-order {
+    @apply hover:scale-[1.02] active:scale-[0.98];
+  }
+
   .btn-doordash,
   .btn-doordash-navbar,
   .btn-doordash-footer,
@@ -360,6 +405,19 @@
     box-shadow:
       0 0 0 6px rgba(212, 114, 26, 0),
       0 4px 22px rgba(212, 114, 26, 0.4);
+  }
+}
+
+@keyframes phone-icon-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.07);
+    opacity: 0.9;
   }
 }
 
