@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Tacos placeholder">
+  <rect width="800" height="600" fill="#E8C9A0"/>
+  <rect x="40" y="40" width="720" height="520" rx="24" fill="#F5EBD8" stroke="#D4A97A" stroke-width="3"/>
+  <text x="400" y="260" text-anchor="middle" font-family="Georgia, serif" font-size="96" fill="#8B2500"><.</text>
+  <text x="400" y="380" text-anchor="middle" font-family="Georgia, serif" font-size="52" font-weight="bold" fill="#4A3728">Tacos</text>
+</svg>

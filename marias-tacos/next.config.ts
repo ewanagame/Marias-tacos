@@ -7,6 +7,9 @@ const nextConfig: NextConfig = {
   output: "export",
   basePath,
   assetPrefix: isGithubPages ? "/Marias-tacos/" : undefined,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
   trailingSlash: true,
   images: {
     unoptimized: true,

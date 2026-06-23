@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Tostadas placeholder">
+  <rect width="800" height="600" fill="#F5EBD8"/>
+  <rect x="40" y="40" width="720" height="520" rx="24" fill="#FFFAF0" stroke="#D4721A" stroke-width="3"/>
+  <text x="400" y="260" text-anchor="middle" font-family="Georgia, serif" font-size="96" fill="#D4721A">>Ó</text>
+  <text x="400" y="380" text-anchor="middle" font-family="Georgia, serif" font-size="52" font-weight="bold" fill="#4A3728">Tostadas</text>
+</svg>

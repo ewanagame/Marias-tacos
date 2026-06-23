@@ -3,12 +3,18 @@ export type GalleryCarouselImage = {
   alt: string;
 };
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+function gallerySrc(filename: string) {
+  return `${basePath}/gallery/${filename}`;
+}
+
 /** Gallery page carousel — real photos from Maria's Tacos */
 export const galleryCarouselImages: GalleryCarouselImage[] = [
-  { src: "/gallery/Burritos.png", alt: "Burritos" },
-  { src: "/gallery/Nachos.png", alt: "Nachos" },
-  { src: "/gallery/Tostadas.png", alt: "Tostadas" },
-  { src: "/gallery/Taco-salad.png", alt: "Taco-salad" },
+  { src: gallerySrc("Burritos.png"), alt: "Burritos" },
+  { src: gallerySrc("Nachos.png"), alt: "Nachos" },
+  { src: gallerySrc("Tostadas.png"), alt: "Tostadas" },
+  { src: gallerySrc("Taco-salad.png"), alt: "Taco-salad" },
 ];
 
 export type GalleryPhoto = {
@@ -20,22 +26,22 @@ export type GalleryPhoto = {
 export const galleryPhotos: GalleryPhoto[] = [
   {
     label: "Burritos",
-    src: "/gallery/Burritos.png",
+    src: gallerySrc("Burritos.png"),
     aspect: "square",
   },
   {
     label: "Nachos",
-    src: "/gallery/Nachos.png",
+    src: gallerySrc("Nachos.png"),
     aspect: "square",
   },
   {
     label: "Tostadas",
-    src: "/gallery/Tostadas.png",
+    src: gallerySrc("Tostadas.png"),
     aspect: "square",
   },
   {
     label: "Taco-salad",
-    src: "/gallery/Taco-salad.png",
+    src: gallerySrc("Taco-salad.png"),
     aspect: "square",
   },
 ];
