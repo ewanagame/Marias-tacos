@@ -22,7 +22,10 @@ export type ButtonVariant =
   | "doordash"
   | "doordash-navbar"
   | "doordash-footer"
-  | "doordash-sticky";
+  | "doordash-sticky"
+  | "call-to-order-navbar"
+  | "call-to-order-footer"
+  | "call-to-order-hero";
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary: "btn-primary",
@@ -39,6 +42,9 @@ const variantClasses: Record<ButtonVariant, string> = {
   "doordash-navbar": "btn-doordash-navbar",
   "doordash-footer": "btn-doordash-footer",
   "doordash-sticky": "btn-doordash-sticky",
+  "call-to-order-navbar": "btn-call-to-order btn-call-to-order-navbar",
+  "call-to-order-footer": "btn-call-to-order btn-call-to-order-footer",
+  "call-to-order-hero": "btn-call-to-order btn-call-to-order-hero",
 };
 
 const doorDashVariants = new Set<ButtonVariant>([

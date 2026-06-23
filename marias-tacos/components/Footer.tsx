@@ -1,11 +1,7 @@
 "use client";
 
-import {
-  AnimatedAnchor,
-  NavAnchor,
-  NavLink,
-  PhoneIcon,
-} from "@/components/ui/AnimatedButton";
+import { NavAnchor, NavLink } from "@/components/ui/AnimatedButton";
+import CallToOrderButton from "@/components/ui/CallToOrderButton";
 import DoorDashOrderButton from "@/components/ui/DoorDashOrderButton";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { siteConfig } from "@/lib/site";
@@ -35,13 +31,7 @@ export default function Footer() {
           </p>
           <div className="mt-4 flex flex-col gap-2">
             <DoorDashOrderButton size="footer" />
-            <AnimatedAnchor
-              href={siteConfig.orderUrl}
-              variant="footer-outline"
-              icon={<PhoneIcon className="h-3.5 w-3.5" />}
-            >
-              {siteConfig.orderLabel}
-            </AnimatedAnchor>
+            <CallToOrderButton size="footer" />
           </div>
         </ScrollReveal>
 
