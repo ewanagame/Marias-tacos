@@ -75,7 +75,7 @@ export default function LeadPopup({
         <div className="p-4">
           {status === "sent" ? (
             <div className="text-center py-6">
-              <p className="text-green-400 font-semibold">Thanks! We'll be in touch shortly.</p>
+              <p className="text-green-400 font-semibold">Thanks! We&apos;ll be in touch shortly.</p>
             </div>
           ) : (
             <>

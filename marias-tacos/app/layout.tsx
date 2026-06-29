@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Lato, Playfair_Display } from "next/font/google";
 import Footer from "@/components/Footer";
+import LeadPopup from "@/components/LeadPopup";
 import LocalBusinessJsonLd from "@/components/LocalBusinessJsonLd";
 import Navbar from "@/components/Navbar";
 import StickyOrderBar from "@/components/StickyOrderBar";
@@ -53,6 +54,7 @@ export default function RootLayout({
         <main className="relative z-0 flex-1 pb-[4.75rem] md:pb-0">{children}</main>
         <Footer />
         <StickyOrderBar />
+        <LeadPopup />
       </body>
     </html>
   );
